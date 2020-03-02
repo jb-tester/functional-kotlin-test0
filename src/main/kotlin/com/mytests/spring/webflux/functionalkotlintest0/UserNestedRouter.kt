@@ -13,7 +13,7 @@ import reactor.core.publisher.Mono
  * *******************************
  */
 @Configuration
-class PersonNestedRouterConfig {
+class UserNestedRouter {
     @Autowired
     private val repo: UserRepository? = null
 
