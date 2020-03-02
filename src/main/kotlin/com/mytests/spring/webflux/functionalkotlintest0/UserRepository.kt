@@ -15,4 +15,5 @@ import java.math.BigInteger
 interface UserRepository: ReactiveCrudRepository<User, BigInteger> {
     fun findAllByName(name: String):Flux<User>
     fun findAllByAgeGreaterThan(age:Mono<Int>):Flux<User>
+    fun findFirstById(id: BigInteger): Mono<User>
 }
