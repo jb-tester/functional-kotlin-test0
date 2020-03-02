@@ -13,12 +13,12 @@ import reactor.core.publisher.Mono
  * *******************************
  */
 @Configuration
-class UserNestedRouter {
+class UserRouter1 {
     @Autowired
     private val repo: UserRepository? = null
 
     @Bean
-    fun nestedRouterFunction(handler: UserService?): RouterFunction<ServerResponse?> {
+    fun nestedRouterFunction(handler: UserService1?): RouterFunction<ServerResponse?> {
         return RouterFunctions
                 .nest(RequestPredicates.path("/route_nested"),
                         RouterFunctions.route(RequestPredicates.GET("/all"), HandlerFunction { serverRequest: ServerRequest -> getAllUsers(serverRequest) })

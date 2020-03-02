@@ -7,7 +7,7 @@ import org.springframework.web.reactive.function.server.ServerResponse
 import reactor.core.publisher.Mono
 
 @Service
-class UserService {
+class UserService1 {
     @Autowired
     private val repo: UserRepository? = null
 
