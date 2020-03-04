@@ -5,11 +5,7 @@ import org.springframework.context.annotation.Configuration
 import org.springframework.web.reactive.function.server.RouterFunction
 import org.springframework.web.reactive.function.server.ServerResponse
 
-import org.springframework.web.reactive.function.BodyInserters.fromObject
 import org.springframework.web.reactive.function.BodyInserters.fromValue
-import org.springframework.web.reactive.function.server.RequestPredicates.GET
-import org.springframework.web.reactive.function.server.RouterFunctions.route
-import org.springframework.web.reactive.function.server.ServerResponse.ok
 import org.springframework.web.reactive.function.server.router
 
 /**
@@ -24,8 +20,8 @@ class SimpleRouter {
     @Bean
     fun simple(): RouterFunction<ServerResponse> {
         return router{
-            GET("/test0/functional/simple/{pathvar}")
-            { req -> ok().body(fromValue("simple" + req.pathVariable("pathvar"))) }
+            GET("/test0/functional/simple/{path_var}")
+            { req -> ok().body(fromValue("simple" + req.pathVariable("path_var"))) }
         }
     }
 
