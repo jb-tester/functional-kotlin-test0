@@ -21,6 +21,7 @@ class UserRouter2(val handler: UserService2) {
             accept(MediaType.APPLICATION_JSON).nest {
                 GET("/users", handler::all)
                 GET("/users/{id}", handler::get)
+                GET("/users/{age}", handler::getByAge)
             }
             accept(MediaType.TEXT_EVENT_STREAM).nest {
                 GET("/users_stream", handler::stream)

@@ -32,12 +32,16 @@ class UserService2(val users: UserRepository) {
     }
 
 
-
     fun get(req: ServerRequest): Mono<ServerResponse> {
         val id = req.pathVariable("id")
         return this.users.findFirstById(ObjectId(id))
-                .flatMap { post -> ok().body(Mono.just(post), User::class.java) }
-                .switchIfEmpty(notFound().build())
+            .flatMap { post -> ok().body(Mono.just(post), User::class.java) }
+            .switchIfEmpty(notFound().build())
+    }
+
+    fun getByAge(req: ServerRequest): Mono<ServerResponse> {
+        val age = req.pathVariable("age")
+        return ok().body(this.users.myQwery(age.toInt()), User::class.java)
     }
 
 
