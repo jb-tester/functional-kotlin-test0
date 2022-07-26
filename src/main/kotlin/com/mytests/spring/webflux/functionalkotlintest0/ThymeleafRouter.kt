@@ -22,8 +22,11 @@ class ThymeleafRouter {
     fun test1(): RouterFunction<ServerResponse> {
         return router{
             GET("/test1")
-            { val attr1 = "test1 passed"
-                ServerResponse.ok().render("test1", mapOf("test1_attr1" to attr1))}
+            {
+                val attr1 = "test1 attribute1"
+                val attr2 = "test1 attribute2"
+                ServerResponse.ok().render("test1", mapOf("test1_attr1" to attr1, "test1_attr2" to attr2))
+            }
     }}
 
     @Bean
