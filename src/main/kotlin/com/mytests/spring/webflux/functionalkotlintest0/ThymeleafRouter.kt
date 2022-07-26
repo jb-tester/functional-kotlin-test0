@@ -9,6 +9,15 @@ import java.net.URI
 
 @Configuration
 class ThymeleafRouter {
+
+    @Bean
+    fun test2(): RouterFunction<ServerResponse> {
+        return router{
+            GET("/test2")
+            {
+                ServerResponse.ok().render("test2")
+            }
+        }}
     @Bean
     fun test1(): RouterFunction<ServerResponse> {
         return router{
