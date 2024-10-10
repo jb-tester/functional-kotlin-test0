@@ -41,7 +41,7 @@ class UserService2(val users: UserRepository) {
 
     fun getByAge(req: ServerRequest): Mono<ServerResponse> {
         val age = req.pathVariable("age")
-        return ok().body(this.users.myQwery(age.toInt()), User::class.java)
+        return ok().body(this.users.myQuery(age.toInt()), User::class.java)
     }
 
 

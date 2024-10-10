@@ -20,5 +20,5 @@ interface UserRepository: ReactiveCrudRepository<User, BigInteger> {
     fun findFirstById(id: ObjectId): Mono<User>
 
     @Query("{age: {\$lt : ?0}}")
-    fun myQwery(age: Int): Flux<User>
+    fun myQuery(age: Int): Flux<User>
 }

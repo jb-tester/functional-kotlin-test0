@@ -6,12 +6,7 @@ import org.springframework.context.annotation.Configuration
 import org.springframework.web.reactive.function.server.*
 import reactor.core.publisher.Mono
 
-/**
- * *******************************
- * Created by Irina.Petrovskaya on 2/19/2020.
- * Project: functional-java-test0
- * *******************************
- */
+
 @Configuration
 open class UserRouter1 {
     @Autowired
