@@ -15,10 +15,10 @@ import org.springframework.web.reactive.function.server.router
  * *******************************
  */
 @Configuration
-class SimpleRouter {
+open class SimpleRouter {
 
     @Bean
-    fun simple(): RouterFunction<ServerResponse> {
+    open fun simple(): RouterFunction<ServerResponse> {
         return router{
             GET("/test0/functional/simple/{path_var}")
             { req -> ok().body(fromValue("simple" + req.pathVariable("path_var"))) }

@@ -7,11 +7,11 @@ import org.springframework.web.reactive.function.server.ServerResponse
 import org.springframework.web.reactive.function.server.router
 
 @Configuration
-class UserRouter2(val handler: UserService2) {
+open class UserRouter2(val handler: UserService2) {
 
 
     @Bean
-    fun routerDsl() = router {
+    open fun routerDsl() = router {
         accept(MediaType.TEXT_HTML).nest {
             GET("/") { ServerResponse.ok().render("home") }
             GET("/hello") { ServerResponse.ok().render("hello") }

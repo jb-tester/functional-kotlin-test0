@@ -8,7 +8,7 @@ import org.springframework.web.reactive.function.server.router
 import java.net.URI
 
 @Configuration
-class ThymeleafRouter {
+open class ThymeleafRouter {
 
     @Bean
     fun test2(): RouterFunction<ServerResponse> {
@@ -19,7 +19,7 @@ class ThymeleafRouter {
             }
         }}
     @Bean
-    fun test1(): RouterFunction<ServerResponse> {
+    open fun test1(): RouterFunction<ServerResponse> {
         return router{
             GET("/test1")
             {
