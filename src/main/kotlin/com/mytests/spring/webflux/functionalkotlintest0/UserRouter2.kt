@@ -10,15 +10,16 @@ import org.springframework.web.reactive.function.server.router
 @Configuration
 class UserRouter2(val handler: UserService2) {
 
-    // views are detected, endpoints are detected: ok
+
     @Bean
     fun routerDsl() = router {
+        // views are detected, endpoints are detected: ok
         accept(MediaType.TEXT_HTML).nest {
             GET("/") { ServerResponse.ok().render("home") }
             GET("/hello") { ServerResponse.ok().render("hello") }
 
         }
-        //  '/dsl_route' prefix is not recognized
+        //  '/dsl_route' prefix is not recognized; if you comment-out the above part, then this will work.
         "/dsl_route".nest {
             accept(MediaType.APPLICATION_JSON).nest {
                 GET("/users", handler::all)
