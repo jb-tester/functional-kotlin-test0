@@ -2,7 +2,6 @@ package com.mytests.spring.webflux.functionalkotlintest0
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
-import org.springframework.http.MediaType
 import org.springframework.web.reactive.function.server.RouterFunction
 import org.springframework.web.reactive.function.server.ServerResponse
 import org.springframework.web.reactive.function.server.router
@@ -10,7 +9,7 @@ import org.springframework.web.reactive.function.server.router
 private const val myUrl = "/constRoot"
 
 @Configuration
-class UserRouter2(val handler: UserService2) {
+class SpecialCasesRouter4(val handler: UserService2) {
 
     // does not work: the '/root1' and '/root2' prefixes are not recognized
     @Bean

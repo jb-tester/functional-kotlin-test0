@@ -19,7 +19,7 @@ class UserRouter2(val handler: UserService2) {
             GET("/hello") { ServerResponse.ok().render("hello") }
 
         }
-        //  '/dsl_route' prefix is not recognized; if you comment-out the above part, then this will work.
+        //  '/dsl_route' prefix is recognized, but is ignored by HTTP Request generator
         "/dsl_route".nest {
             accept(MediaType.APPLICATION_JSON).nest {
                 GET("/users", handler::all)

@@ -34,7 +34,7 @@ POST http://localhost:8080/api2/device2/new_device2
 GET http://localhost:8080/api3/devices3/
 
 ###
-GET http://localhost:8080/api2/device3/
+GET http://localhost:8080/api3/device3/
 
 ###
 POST http://localhost:8080/api3/device3/new_device3
