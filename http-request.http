@@ -1,0 +1,73 @@
+### DeviceRouter3:
+
+###
+GET http://localhost:8080/api1/devices1/
+###
+GET http://localhost:8080/api1/device1
+###
+GET http://localhost:8080/api1/device1/device5
+
+###
+GET http://localhost:8080/api2/devices2/
+
+###
+GET http://localhost:8080/api2/device2/
+###
+GET http://localhost:8080/api2/device2/device2
+
+###
+POST http://localhost:8080/api2/device2/new_device2
+
+###
+GET http://localhost:8080/api3/devices3/
+
+###
+GET http://localhost:8080/api2/device3/
+
+###
+POST http://localhost:8080/api3/device3/new_device3
+
+
+
+###UserRouter1:
+
+###
+GET http://localhost:8080/route_nested/all
+###
+GET http://localhost:8080/route_nested/by_age/18
+
+###
+GET http://localhost:8080/route_nested/by_name/name3
+
+
+##UserRouter2:
+
+###
+GET http://localhost:8080/
+
+###
+GET http://localhost:8080/hello
+
+###
+GET http://localhost:8080/dsl_route/users_stream
+
+###
+GET http://localhost:8080/dsl_route/users
+
+###
+GET http://localhost:8080/dsl_route/users/619cc62f01f6533746fd0920
+
+###
+GET http://localhost:8080/dsl_route/usersByAge/50
+
+
+###
+GET http://localhost:8080/root1/subroot
+###
+GET http://localhost:8080/root2/subroot
+
+###
+GET http://localhost:8080/varRoot/var_subroot
+
+###
+GET http://localhost:8080/constRoot/const_subroot
