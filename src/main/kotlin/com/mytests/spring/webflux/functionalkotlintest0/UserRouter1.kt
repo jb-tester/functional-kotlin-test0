@@ -26,7 +26,6 @@ open class UserRouter1 {
 
 
     private fun getAllUsers(serverRequest: ServerRequest): Mono<ServerResponse?> {
-        repo!!.findAll().subscribe { println(it) }
         return ServerResponse.ok().body(repo!!.findAll(), User::class.java)
     }
 

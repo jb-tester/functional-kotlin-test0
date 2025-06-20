@@ -20,12 +20,12 @@ class UserRouter2(val handler: UserService2) {
             GET("/hello") { ServerResponse.ok().render("hello") }
 
         }
-        // incorrect HTTP request is generated: '/dsl_route' prefix is missing
+        // an incorrect HTTP request is generated: '/dsl_route' prefix is missing
         "/dsl_route".nest {
             accept(MediaType.APPLICATION_JSON).nest {
                 GET("/users", handler::all)
                 GET("/users/{id}", handler::get)
-                GET("/users/{age}", handler::getByAge)
+                GET("/usersByAge/{age}", handler::getByAge)
             }
             accept(MediaType.TEXT_EVENT_STREAM).nest {
                 GET("/users_stream", handler::stream)
@@ -50,7 +50,7 @@ class UserRouter2(val handler: UserService2) {
         }
     }
 
-    // endpoint detecting works
+    // endpoint detecting works, but HTTP Request is incorrect: '/const_subroot' suffix is missing
     @Bean
     fun routerConst(): RouterFunction<ServerResponse> {
         val subUrl = "/const_subroot"
