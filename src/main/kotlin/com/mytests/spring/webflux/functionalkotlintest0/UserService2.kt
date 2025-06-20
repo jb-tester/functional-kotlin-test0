@@ -44,6 +44,9 @@ class UserService2(val users: UserRepository) {
         return ok().body(this.users.myQuery(age.toInt()), User::class.java)
     }
 
-
+    fun forList(req: ServerRequest): Mono<ServerResponse> {
+        return ok().body(Mono.just("foo")
+            , String::class.java)
+    }
 }
 

@@ -28,4 +28,9 @@ open class UserRouter2(val handler: UserService2) {
             }
         }
     }
+
+    @Bean
+    open fun routerList() = router {
+        listOf("/root1", "/root2").forEach { it.nest { GET("/subroot", handler::forList) } }
+    }
 }
