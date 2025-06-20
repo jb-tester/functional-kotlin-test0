@@ -6,7 +6,7 @@ import java.math.BigInteger
 
 
 @Document
-class User(var name: String, var age: Int, var references: List<String>) {
+class User(var name: String, var age: Int, var references: List<String>?) {
     @Id
     var id: BigInteger? = null
 
