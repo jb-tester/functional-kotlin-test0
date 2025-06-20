@@ -41,7 +41,7 @@ POST http://localhost:8080/api3/device3/new_device3
 
 
 
-###UserRouter1:
+### UserRouter1:
 
 ###
 GET http://localhost:8080/route_nested/all
@@ -52,7 +52,7 @@ GET http://localhost:8080/route_nested/by_age/18
 GET http://localhost:8080/route_nested/by_name/name3
 
 
-##UserRouter2:
+### UserRouter2:
 
 ###
 GET http://localhost:8080/
@@ -72,6 +72,7 @@ GET http://localhost:8080/dsl_route/users/619cc62f01f6533746fd0920
 ###
 GET http://localhost:8080/dsl_route/usersByAge/50
 
+### SpecialCasesRouter4:
 
 ###
 GET http://localhost:8080/root1/subroot
