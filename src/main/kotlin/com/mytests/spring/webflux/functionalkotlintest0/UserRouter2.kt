@@ -7,7 +7,7 @@ import org.springframework.web.reactive.function.server.RouterFunction
 import org.springframework.web.reactive.function.server.ServerResponse
 import org.springframework.web.reactive.function.server.router
 
-private const val string = "/constRoot"
+private const val myUrl = "/constRoot"
 
 @Configuration
 class UserRouter2(val handler: UserService2) {
@@ -20,6 +20,7 @@ class UserRouter2(val handler: UserService2) {
             GET("/hello") { ServerResponse.ok().render("hello") }
 
         }
+        // incorrect HTTP request is generated: '/dsl_route' prefix is missing
         "/dsl_route".nest {
             accept(MediaType.APPLICATION_JSON).nest {
                 GET("/users", handler::all)
@@ -49,13 +50,13 @@ class UserRouter2(val handler: UserService2) {
         }
     }
 
-    // works:
+    // endpoint detecting works
     @Bean
     fun routerConst(): RouterFunction<ServerResponse> {
-        val pattern = "/const_subroot"
+        val subUrl = "/const_subroot"
         return router {
-            string.nest {
-                GET(pattern, handler::simpleHandler) }
+            myUrl.nest {
+                GET(subUrl, handler::simpleHandler) }
         }
     }
 
