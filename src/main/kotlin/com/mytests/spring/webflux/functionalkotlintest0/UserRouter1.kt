@@ -12,6 +12,7 @@ open class UserRouter1 {
     @Autowired
     private val repo: UserRepository? = null
 
+    // ok:
     @Bean
     open fun nestedRouterFunction(handler: UserService1?): RouterFunction<ServerResponse?> {
         return RouterFunctions

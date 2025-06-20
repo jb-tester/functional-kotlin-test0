@@ -10,8 +10,9 @@ import org.springframework.web.reactive.function.server.router
 @Configuration
 open class DeviceRouter3(val handler1: DeviceHandler1 ) {
 
-    
-    // the prefix "/api2" is used for all routes on HTTP request generating 
+    // the prefix "/api1" and "/api2" are recognized, the "/api3" is not recognized
+    // the prefix "/api2" is used for all routes on HTTP request generating
+    // the HTTP method GET is used for all routes despite the specified POST
     @Bean
     open fun deviceRouter() = router {
         "/api1".nest {

@@ -11,6 +11,7 @@ class GetPostSimpleRouter {
     @Bean
     fun getAndPostTest() = router {
         GET("/testGet") { ServerResponse.ok().bodyValue("testGet") }
+        // HTTP request is generated with GET method:
         POST("/testPost") { request ->
             request.bodyToMono(String::class.java).flatMap { body ->
                 ServerResponse.ok().bodyValue("testPost: received body: $body")
