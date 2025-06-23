@@ -8,12 +8,7 @@ import org.springframework.web.reactive.function.server.ServerResponse
 import org.springframework.web.reactive.function.BodyInserters.fromValue
 import org.springframework.web.reactive.function.server.router
 
-/**
- * *******************************
- * Created by Irina.Petrovskaya on 10/31/2019.
- * Project: functional-java-test0
- * *******************************
- */
+
 @Configuration
 open class SimpleRouter {
 
